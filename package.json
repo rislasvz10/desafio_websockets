@@ -1,0 +1,20 @@
+{
+  "name": "desafio_6",
+  "version": "0.1.0",
+  "description": "Desafio 6 websockets",
+  "author": "Ricardo Arturo Islas Vazquez",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "socket.io": "^4.5.2"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC"
+}

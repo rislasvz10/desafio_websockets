@@ -26,6 +26,6 @@ app.get('/', (req, res) => {
 app.use('/products', productsRouter)
 
 
-io.on('connection', socket =>{
-  console.log("socket connected");
+io.on('connection', socket => {
+  console.log(`Client ${socket.id} connected...`)
 })

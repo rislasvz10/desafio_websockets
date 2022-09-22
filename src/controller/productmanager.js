@@ -1,11 +1,15 @@
 let products = require('../model/products.js')
 
-class Manager {
+class ProductManager {
+
+    findAll = () => {
+        return products
+    }
 
     newProduct = (product) => {
         let id
         if (products.length === 0) id = 1
-        else products[products.length-1].id+1
+        else id = products[products.length-1].id+1
         product.price = parseInt(product.price)
         product = {
             id,
@@ -15,11 +19,8 @@ class Manager {
         return product
     }
 
-    findAll = () => {
-        return products
-    }
 
    
 }
 
-module.exports = Manager
+module.exports = ProductManager

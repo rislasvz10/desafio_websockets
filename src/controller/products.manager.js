@@ -1,4 +1,4 @@
-let products = require('../model/products.js')
+let products = require('../model/products.model.js')
 
 class ProductManager {
 
@@ -17,10 +17,7 @@ class ProductManager {
         }
         products.push(product)
         return product
-    }
-
-
-   
+    }   
 }
 
 module.exports = ProductManager

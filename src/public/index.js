@@ -13,12 +13,12 @@ const handleSubmit = (evt, form, route) => {
     body: JSON.stringify(obj),
     headers: {
       "Content-type": "application/json",
-    },
+    }
   })
     .then((response) => response.json())
     .then((response) => socket.emit(socketEvent, response))
     .then(() => form.reset());
-};
+}
 
 productsForm.addEventListener("submit", (e) => handleSubmit(e, e.target, "/products"));
 chatForm.addEventListener("submit", (e) => handleSubmit(e, e.target, "/chat"));
@@ -53,7 +53,6 @@ socket.on('history', data => {
       history.innerHTML = html
   }
 })
-
 
 socket.on('chatHistory', data => {
   if (data.length > 0) {

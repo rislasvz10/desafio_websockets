@@ -1,12 +1,12 @@
-const express = require("express");
-const { Server } = require("socket.io");
-const handlebars = require("express-handlebars");
+const express = require("express")
+const { Server } = require("socket.io")
+const handlebars = require("express-handlebars")
 
-const productsRouter = require("./routes/products");
-const chatRouter = require("./routes/chat");
-let products = require("./model/products.model");
+const productsRouter = require("./routes/products")
+const chatRouter = require("./routes/chat")
+let products = require("./model/products.model")
 
-const Manager = require("./controller/chat.manager");
+const Manager = require("./controller/chat.manager")
 const manager = new Manager();
 
 const app = express();
@@ -34,11 +34,11 @@ app.use("/chat", chatRouter);
 io.on("connection", (socket) => {
   console.log(`Client ${socket.id} connected...`);
   socket.emit("history", products);
-  manager.findAll().then((result) => socket.emit("chatHistory", result));
+  manager.findAll().then((result) => socket.emit("chatHistory", result))
   socket.on("products", (data) => {
     io.emit("history", data);
   });
   socket.on("chat", (data) => {
     io.emit("chatHistory", data);
-  });
-});
+  })
+})
